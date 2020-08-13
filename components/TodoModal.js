@@ -49,7 +49,7 @@ export default class TodoModal extends React.Component {
     }
     renderTodo = (todo, index) => {
         return (
-            <Swipeable renderRightView={(_, dragX) => this.rightActions(dragX, index)}>
+            <Swipeable renderRightActions={(_, dragX) => this.rightActions(dragX, index)}>
                 <View style={styles.todoContainer}>
                     <TouchableOpacity onPress={() => this.toggleTodoCompleted(index)}>
                         <Ionicons
@@ -95,7 +95,7 @@ export default class TodoModal extends React.Component {
                         Delete
                     </Animated.Text>
                 </Animated.View>
-            </TouchableOpacity>
+            </TouchableOpacity >
         );
     };
 
