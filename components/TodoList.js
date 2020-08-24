@@ -12,6 +12,10 @@ export default class TodoList extends React.Component {
         this.setState({ showListVisible: !this.state.showListVisible })
     }
 
+    renderList = list => {
+        return <TodoList list={list} updateList={this.updateList} deleteList={this.deleteList} />
+    };
+
     render() {
         const list = this.props.list;
 
@@ -32,7 +36,9 @@ export default class TodoList extends React.Component {
                 </Modal>
                 <TouchableOpacity
                     style={[styles.listContainer, { backgroundColor: list.color }]}
-                    onPress={() => this.toggleListModal()}
+                    onLongPress={() => this.props.deleteList(list)}
+                    onPress={() => this.toggleListModal()
+                    }
                 >
                     <Text style={styles.listTitle} numberOfLines={1}>
                         {list.name}

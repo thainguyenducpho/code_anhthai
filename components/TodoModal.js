@@ -16,6 +16,7 @@ import colors from '../Colors';
 import { Swipeable } from 'react-native-gesture-handler';
 
 export default class TodoModal extends React.Component {
+
     state = {
         newTodo: ""
     }
@@ -54,7 +55,7 @@ export default class TodoModal extends React.Component {
                     <TouchableOpacity onPress={() => this.toggleTodoCompleted(index)}>
                         <Ionicons
                             name={todo.completed ? "ios-square" : "ios-square-outline"}
-                            size={28}
+                            size={33}
                             color={colors.lightGray}
                             style={{ width: 32 }}
                         />
